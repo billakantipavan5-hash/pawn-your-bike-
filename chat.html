@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="logo" onclick="location.href='profile.html'" style="cursor:pointer;">
+PUB 🚲
+</div>
+
+
+<div class="container">
+<h3>Chat with Pawnbroker</h3>
+
+<div class="chat-box" id="chatBox">
+<p><b>Broker:</b> Is RC available?</p>
+</div>
+
+<input id="msg" placeholder="Type message">
+<button onclick="sendMsg()">Send</button>
+</div>
+
+<script>
+function sendMsg(){
+ let msg=document.getElementById("msg").value;
+ let box=document.getElementById("chatBox");
+ if(msg!=""){
+   box.innerHTML+=`<p><b>You:</b> ${msg}</p>`;
+   document.getElementById("msg").value="";
+ }
+}
+</script>
+
+</body>
+</html>

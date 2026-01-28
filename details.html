@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawn Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="logo" onclick="location.href='profile.html'" style="cursor:pointer;">
+PUB 🚲
+</div>
+
+
+<div class="container">
+<img class="big-img" src="https://images.unsplash.com/photo-1606229365485-93a3b8ee0385">
+
+<h2>Royal Enfield Classic 350</h2>
+<p><b>Model:</b> 2021</p>
+<p><b>Loan Amount:</b> ₹50,000</p>
+<p><b>Interest:</b> 24% per year</p>
+<p><b>Tenure:</b> 6 months</p>
+
+<button onclick="location.href='chat.html'">Chat with Pawnbroker</button>
+</div>
+<button onclick="approve()">Request Pawn Approval</button>
+<p id="status"></p>
+<button onclick="location.href='chat.html'">
+  Chat with Pawnbroker
+</button>
+
+
+<script>
+function approve(){
+  document.getElementById("status").innerHTML =
+   "✅ Pawn Approved! Amount will be credited in 24 hours.";
+}
+</script>
+<h3>Loan Calculator</h3>
+
+<input type="number" id="amount" placeholder="Loan Amount (₹)">
+<input type="number" id="months" placeholder="Tenure (Months)">
+<button onclick="calculateLoan()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculateLoan(){
+  let P = document.getElementById("amount").value;
+  let T = document.getElementById("months").value / 12;
+  let R = 24; // 24% yearly
+
+  let interest = (P * R * T) / 100;
+  let total = Number(P) + interest;
+
+  document.getElementById("result").innerHTML =
+    `Interest: ₹${interest.toFixed(0)} <br>Total Repayment: ₹${total.toFixed(0)}`;
+}
+</script>
+
+
+
+</body>
+</html>
+
